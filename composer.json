@@ -1,5 +1,5 @@
 {
-  "name": "awcodes/filament-curator",
+  "name": "mallaurygerard/filament-media-manager",
   "description": "A media picker plugin for FilamentPHP.",
   "keywords": [
     "awcodes",
@@ -7,12 +7,12 @@
     "curator",
     "filament"
   ],
-  "homepage": "https://github.com/awcodes/filament-curator",
+  "homepage": "https://github.com/mallaurygerard/filament-media-manager",
   "license": "MIT",
   "authors": [
     {
-      "name": "awcodes",
-      "email": "awcodes1@gmail.com",
+      "name": "Mallaury Gérard",
+      "email": "contact@mallaury.be",
       "role": "Developer"
     }
   ],
