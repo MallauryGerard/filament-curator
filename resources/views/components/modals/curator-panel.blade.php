@@ -56,13 +56,6 @@
                 {{ trans('curator::views.panel.load_more') }}
             </x-filament::button>
             @endif
-            @if ($isMultiple)
-                @if (config('curator.multi_select_key') === 'metaKey')
-                    <p class="text-xs">{{ trans('curator::views.panel.add_multiple_file', ['key' => 'Cmd']) }}</p>
-                @else
-                    <p class="text-xs">{{ trans('curator::views.panel.add_multiple_file', ['key' => config('curator.multi_select_key')]) }}</p>
-                @endif
-            @endif
         </div>
         <label class="border border-gray-300 dark:border-gray-700 rounded-md relative flex items-center">
             <span class="sr-only">{{ trans('curator::views.panel.search_label') }}</span>
