@@ -16,6 +16,8 @@ use Filament\Tables\Table;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\App;
+use Illuminate\Database\Eloquent\Builder;
 
 use function Awcodes\Curator\is_media_resizable;
 
@@ -324,5 +326,17 @@ class MediaResource extends Resource
             ->preserveFilenames(config('curator.should_preserve_filenames'))
             ->visibility(config('curator.visibility'))
             ->storeFileNamesIn('originalFilename');
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return config('curator.is_limited_to_directory')
+            ? parent::getEloquentQuery()->where('directory', self::getPath())
+            : parent::getEloquentQuery();
+    }
+
+    private static function getPath()
+    {
+        return App::make(config('curator.path_generator'))->getPath(config('curator.directory'));
     }
 }
